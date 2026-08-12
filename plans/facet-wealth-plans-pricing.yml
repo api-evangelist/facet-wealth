@@ -1,0 +1,94 @@
+generated: '2026-08-12'
+method: searched
+source: https://facet.com/pricing/
+docs: https://facet.com/pricing/
+scope: consumer-membership
+scope_note: >-
+  IMPORTANT — these are Facet's consumer financial-planning membership tiers, NOT API
+  access plans. Facet publishes no developer program and no API, so there is no API
+  pricing surface to record. The tiers below are captured because they are the real,
+  publicly published commercial plans of the company; they should not be read as API
+  quota or rate tiers. api_plan_count is 0.
+plan_count: 3
+api_plan_count: 0
+currency: USD
+billing_periods:
+- annual
+- quarterly
+plans:
+- name: Core
+  price: 2600
+  currency: USD
+  price_display: '$2,600 /year'
+  period: year
+  enrollment_fee: 300
+  enrollment_fee_note: '$300 enrollment fee waived when paying annually.'
+  included:
+  - Access to CERTIFIED FINANCIAL PLANNER professionals
+  - 3 planning meetings in year one, 1 annual meeting in year two onward
+  - Core planning hours 9am-5pm
+  - Retirement and life planning
+  - Savings and debt management
+  - Investment management
+  - Tax-savings strategies
+  - Insurance planning
+  - Education planning
+  limits:
+    planning_meetings_year_one: 3
+    planning_meetings_ongoing: 1
+    support_hours: 9am-5pm
+- name: Plus
+  price: 5500
+  currency: USD
+  price_display: '$5,500 /year'
+  period: year
+  enrollment_fee: 300
+  enrollment_fee_note: '$300 enrollment fee waived when paying annually.'
+  included:
+  - Dedicated CFP professional team
+  - 3 planning meetings in year one, 2 annual meetings in year two onward
+  - Extended hours 9am-8pm
+  - Tax filing by a certified tax professional
+  - Employer stock and equity compensation planning
+  - Private market investing access
+  limits:
+    planning_meetings_year_one: 3
+    planning_meetings_ongoing: 2
+    support_hours: 9am-8pm
+- name: Complete
+  price: 8700
+  currency: USD
+  price_display: '$8,700 /year'
+  period: year
+  enrollment_fee: 300
+  enrollment_fee_note: '$300 enrollment fee waived when paying annually.'
+  included:
+  - Dedicated CFP professional
+  - 4 planning meetings in year one, 4 annual meetings in year two onward
+  - Extended hours 7am-8pm
+  - Private investment team consultation
+  - Concierge onboarding
+  - Priority support
+  - Comprehensive tax-savings analysis
+  - Direct Indexing access
+  limits:
+    planning_meetings_year_one: 4
+    planning_meetings_ongoing: 4
+    support_hours: 7am-8pm
+add_ons:
+- name: Estate Planning
+  price_first_year: 1200
+  price_renewal: 100
+  currency: USD
+  period: year
+  available_on:
+  - Core
+  - Plus
+  - Complete
+  note: >-
+    Delivered in partnership with Wealth.com; announced 2024-05-30. First year $1,200.00,
+    renews at $100/yr.
+pricing_model: flat-fee-membership
+pricing_model_note: >-
+  Facet charges a flat annual membership fee rather than an assets-under-management
+  percentage, and takes no commissions.

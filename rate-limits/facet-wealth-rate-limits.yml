@@ -1,0 +1,39 @@
+generated: '2026-08-12'
+method: probed
+source: >-
+  Live probes of https://api.facet.com/ and https://facet.com/ response headers, plus a
+  search of facet.com for any published developer or rate-limit documentation.
+limit_count: 0
+note: >-
+  Facet publishes no developer documentation of any kind, so there are no documented rate
+  limits to record. This is an honest zero, not an unchecked field. The response headers
+  of the one live JSON host (api.facet.com, the private backend for Facet's own member
+  application) were inspected directly and carry no rate-limit signal: no X-RateLimit-*,
+  no RateLimit-*, and no Retry-After. The only operational headers returned are
+  strict-transport-security, cache-control, x-trace-id and Cloudflare's cf-ray and
+  cf-cache-status. Consumers of a Facet API do not exist, because Facet does not offer
+  one.
+headers_observed:
+  rate_limit_headers: []
+  ratelimit_draft_headers: []
+  retry_after: false
+  other_operational_headers:
+  - strict-transport-security
+  - cache-control
+  - x-trace-id
+  - access-control-expose-headers
+  - cf-ray
+  - cf-cache-status
+exhaustion_status_code: null
+limits: []
+evidence:
+- url: https://api.facet.com/
+  status: 200
+  note: >-
+    Returns JSON for Facet's own web application. No rate-limit headers present in the
+    response. Undocumented and not offered as a product.
+- url: https://facet.com/robots.txt
+  status: 200
+  note: >-
+    WordPress marketing site robots.txt. Disallows /wp-json/ to AI crawlers; no developer
+    or API paths are referenced anywhere on the site.

@@ -1,0 +1,119 @@
+generated: '2026-08-12'
+method: probed
+source: live HTTP probes of every Facet host known to API Evangelist
+note: >-
+  Every /.well-known/ path was probed on all four Facet hosts and every one missed. No
+  WellKnown or SecurityTxt pointer is emitted in apis.yml, because a pointer asserts that
+  the provider SERVES that surface and Facet does not. This file records a verified
+  absence, which is valid data, not a presence.
+hosts_probed:
+- https://facet.com
+- https://www.facet.com
+- https://api.facet.com
+- https://api.facetwealth.com
+result: no-hits
+hit_count: 0
+probes:
+- path: /.well-known/security.txt
+  host: https://facet.com
+  status: 404
+  file: null
+  note: Apache-style plain 404, 146 bytes.
+- path: /.well-known/openid-configuration
+  host: https://facet.com
+  status: 404
+  file: null
+  note: WordPress HTML 404 page (187 KB). Not a document.
+- path: /.well-known/oauth-authorization-server
+  host: https://facet.com
+  status: 404
+  file: null
+  note: WordPress HTML 404 page. Not a document.
+- path: /.well-known/oauth-protected-resource
+  host: https://facet.com
+  status: 404
+  file: null
+  note: WordPress HTML 404 page. Not a document.
+- path: /.well-known/api-catalog
+  host: https://facet.com
+  status: 404
+  file: null
+  note: WordPress HTML 404 page. Not a document.
+- path: /.well-known/ai-plugin.json
+  host: https://facet.com
+  status: 404
+  file: null
+  note: WordPress HTML 404 page. Not a document.
+- path: /.well-known/agent-card.json
+  host: https://facet.com
+  status: 404
+  file: null
+  note: WordPress HTML 404 page. No A2A agent card.
+- path: /.well-known/agent.json
+  host: https://facet.com
+  status: 404
+  file: null
+  note: Legacy pre-0.3 agent card path. WordPress HTML 404 page. No card.
+- path: /.well-known/security.txt
+  host: https://api.facet.com
+  status: 404
+  file: null
+  note: 'Plain-text "404 page not found" from the API origin — an honest 404, not an SPA
+    catch-all.'
+- path: /.well-known/openid-configuration
+  host: https://api.facet.com
+  status: 404
+  file: null
+- path: /.well-known/oauth-authorization-server
+  host: https://api.facet.com
+  status: 403
+  file: null
+  note: >-
+    Cloudflare WAF interstitial (4,570 bytes of HTML), not an OAuth metadata document.
+    Recorded as a miss, not a hit — no authorization-server metadata is served.
+- path: /.well-known/oauth-protected-resource
+  host: https://api.facet.com
+  status: 403
+  file: null
+  note: Cloudflare WAF interstitial, not a protected-resource metadata document.
+- path: /.well-known/api-catalog
+  host: https://api.facet.com
+  status: 404
+  file: null
+- path: /.well-known/ai-plugin.json
+  host: https://api.facet.com
+  status: 404
+  file: null
+- path: /.well-known/agent-card.json
+  host: https://api.facet.com
+  status: 404
+  file: null
+- path: /.well-known/agent.json
+  host: https://api.facet.com
+  status: 404
+  file: null
+- path: /.well-known/security.txt
+  host: https://api.facetwealth.com
+  status: 404
+  file: null
+- path: /.well-known/oauth-authorization-server
+  host: https://api.facetwealth.com
+  status: 404
+  file: null
+- path: /.well-known/agent-card.json
+  host: https://api.facetwealth.com
+  status: 404
+  file: null
+- path: /.well-known/agent.json
+  host: https://api.facetwealth.com
+  status: 404
+  file: null
+adjacent_findings:
+- path: /llms.txt
+  host: https://facet.com
+  status: 200
+  file: llms/facet-wealth-llms.txt
+  note: >-
+    Not a /.well-known/ path, but the one machine-readable document Facet does publish.
+    Saved verbatim and wired as type LLMsTxt. It is an AI-search positioning document —
+    company description, service list, preferred terminology — and names no API.

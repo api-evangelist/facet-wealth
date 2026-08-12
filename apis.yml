@@ -1,8 +1,17 @@
 aid: facet-wealth
 name: Facet Wealth
-description: 'Facet Wealth is a company surfaced via the API Evangelist harvest backlog (source: secondary-market)
-  and added to the network as a stub for full-pipeline profiling.'
+description: 'Facet (also known as Facet Wealth) is a national SEC-registered investment
+  advisor and financial planning firm founded in 2016 and headquartered in Baltimore,
+  Maryland. Facet delivers fiduciary, product-agnostic financial advice through a flat
+  annual membership rather than an assets-under-management fee, pairing a proprietary
+  technology platform with CERTIFIED FINANCIAL PLANNER professionals. Membership covers
+  comprehensive financial planning, investment management, retirement planning, tax
+  strategy and filing, equity compensation planning, insurance guidance, education
+  planning, and estate planning delivered in partnership with Wealth.com. Facet is a
+  direct-to-consumer advisory service: it publishes no public developer program, API
+  documentation, or machine-readable contract.'
 url: https://raw.githubusercontent.com/api-evangelist/facet-wealth/refs/heads/main/apis.yml
+image: https://facet.com/wp-content/uploads/2023/02/Facet_logo_rgb_pos-min.png
 x-type: company
 x-source: harvest:secondary-market
 x-tier: stub
@@ -12,6 +21,14 @@ created: '2026-08-12'
 modified: '2026-08-12'
 tags:
 - Company
+- Financial Services
+- Financial Planning
+- Wealth Management
+- Investment Management
+- Retirement Planning
+- Tax Planning
+- Registered Investment Advisor
+- Personal Finance
 apis: []
 maintainers:
 - FN: Kin Lane
@@ -20,4 +37,54 @@ maintainers:
   email: info@apis.io
 common:
 - type: Website
+  url: https://facet.com/
+- type: Pricing
+  url: https://facet.com/pricing/
+- type: SignUp
+  url: https://facet.com/get-started/
+- type: TermsOfService
+  url: https://facet.com/legal-documents/terms-of-use/
+- type: PrivacyPolicy
+  url: https://facet.com/privacy-notice/
+- type: Support
+  url: https://facet.com/contact/
+- type: Blog
+  url: https://facet.com/learn/library/
+- type: GitHubOrganization
+  url: https://github.com/Facet-Wealth
+- type: LLMsTxt
+  url: llms/facet-wealth-llms.txt
+- type: Plans
+  url: plans/facet-wealth-plans-pricing.yml
+- type: RateLimits
+  url: rate-limits/facet-wealth-rate-limits.yml
+- type: DomainSecurity
+  url: security/facet-wealth-domain-security.yml
+- type: SecondaryMarket
   url: https://forgeglobal.com/facet-wealth_stock/
+x-enrichment:
+  date: '2026-08-12'
+  status: minimal
+  artifacts_added: 5
+  pass: local-v1
+x-coverage:
+  state: none
+  reason: no-developer-program
+  detail: >-
+    Facet sells human financial advice, not software: its one live JSON host
+    (api.facet.com) is the private backend for its own member application and returns
+    plain-text 404s on every spec path, the marketing site is WordPress with no developer
+    section in its sitemap, and the only machine-readable document Facet publishes —
+    facet.com/llms.txt — describes the advisory service and never mentions an API.
+  evidence:
+  - url: https://api.facet.com/
+    status: 200
+  - url: https://api.facet.com/openapi.json
+    status: 404
+  - url: https://api.facet.com/.well-known/agent-card.json
+    status: 404
+  - url: https://facet.com/llms.txt
+    status: 200
+  - url: https://facet.com/pricing/
+    status: 200
+  checked: '2026-08-12'
