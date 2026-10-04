@@ -46,7 +46,7 @@ created: '2026-08-12'
 modified: '2026-08-12'
 tags:
 - Company
-- Financial-Services
+- Financial Services
 - Financial Planning
 - Wealth Management
 - Investment Management
@@ -64,6 +64,7 @@ tags_raw:
 - Tax Planning
 - Registered Investment Advisor
 - Personal Finance
+- Financial-Services
 apis: []
 maintainers:
 - FN: Kin Lane
